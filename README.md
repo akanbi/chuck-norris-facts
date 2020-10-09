@@ -1,1 +1,1 @@
-# chuck-norris-fact
+# chuck-norris-facts
