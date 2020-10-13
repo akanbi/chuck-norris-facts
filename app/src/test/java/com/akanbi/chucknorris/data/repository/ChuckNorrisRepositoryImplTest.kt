@@ -48,7 +48,7 @@ internal class ChuckNorrisRepositoryImplTest {
             assertEquals("icon", factResult.icon)
         }
 
-        @BeforeEach
+        @Test
         fun `Should return list should not null and contains five elements`() = runBlocking {
             coEvery { api.searchMeAFactWith("film").await() } returns ( createFactListResponse() )
             factsResult = repository.searchMeAFactWith("film")
