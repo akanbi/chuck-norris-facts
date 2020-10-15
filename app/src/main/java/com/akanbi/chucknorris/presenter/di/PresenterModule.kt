@@ -7,7 +7,7 @@ import org.koin.dsl.module
 
 val presenterModule = module {
 
-    viewModel {
+    viewModel<FactRandomViewModel> {
         FactRandomViewModel(get<TellMeAFactRandomUseCase>())
     }
 

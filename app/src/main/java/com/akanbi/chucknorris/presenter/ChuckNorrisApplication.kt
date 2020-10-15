@@ -13,7 +13,7 @@ class ChuckNorrisApplication : Application() {
         super.onCreate()
         startKoin {
             androidContext(this@ChuckNorrisApplication)
-            modules(dataModule, domainModule, presenterModule)
+            modules(arrayListOf(dataModule, domainModule, presenterModule))
         }
     }
 
