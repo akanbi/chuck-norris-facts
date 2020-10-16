@@ -3,18 +3,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presenter.view.ChuckNorrisFactsActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarActivity"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_width="0dp"
+        android:background="@color/colorPrimary"
+        app:titleTextColor="@color/fontColor"
+        android:layout_height="?actionBarSize"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <fragment
         android:id="@+id/fragmentRandomFact"
         class="com.akanbi.chucknorris.presenter.viewmodel.fact.random.FactRandomFragments"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/toolbarActivity"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarActivity"
         tools:layout="@layout/random_fact_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
