@@ -1,5 +1,6 @@
 package com.akanbi.chucknorris.presenter.viewmodel.fact.random
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -8,12 +9,14 @@ import com.akanbi.chucknorris.domain.usecase.fact.random.TellMeAFactRandomUseCas
 import kotlinx.coroutines.launch
 
 class FactRandomViewModel(private val tellMeAFactRandomUseCase: TellMeAFactRandomUseCase) : ViewModel() {
+    private var _factLiveData: MutableLiveData<Fact> = MutableLiveData()
 
-    var factLiveData: MutableLiveData<Fact> = MutableLiveData()
+    val factLiveData: LiveData<Fact>
+        get() = _factLiveData
 
     fun loadFactRandom() {
         viewModelScope.launch {
-            factLiveData.postValue(tellMeAFactRandomUseCase.execute())
+            _factLiveData.value = tellMeAFactRandomUseCase.execute()
         }
     }
 

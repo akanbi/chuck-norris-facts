@@ -12,9 +12,9 @@
 
     <fragment
         android:id="@+id/fragmentRandomFact"
+        class="com.akanbi.chucknorris.presenter.viewmodel.fact.random.FactRandomFragments"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        class="com.akanbi.chucknorris.presenter.viewmodel.fact.random.FactRandomFragments"
-        tools:layout="@layout/random_fact_layout"/>
+        tools:layout="@layout/random_fact_layout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
