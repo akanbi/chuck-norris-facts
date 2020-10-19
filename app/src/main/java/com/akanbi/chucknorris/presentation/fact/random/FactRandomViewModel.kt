@@ -1,4 +1,4 @@
-package com.akanbi.chucknorris.presentation.viewmodel.fact.random
+package com.akanbi.chucknorris.presentation.fact.random
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.akanbi.chucknorris.domain.model.Fact
 import com.akanbi.chucknorris.domain.usecase.fact.random.TellMeAFactRandomUseCase
+import com.akanbi.chucknorris.presentation.util.randomGif
 import kotlinx.coroutines.launch
 
 class FactRandomViewModel(private val tellMeAFactRandomUseCase: TellMeAFactRandomUseCase) : ViewModel() {
@@ -16,8 +17,11 @@ class FactRandomViewModel(private val tellMeAFactRandomUseCase: TellMeAFactRando
 
     fun loadFactRandom() {
         viewModelScope.launch {
+            _factLiveData.value = null
             _factLiveData.value = tellMeAFactRandomUseCase.execute()
         }
     }
+
+    fun loadGifUrl(): String = randomGif()
 
 }

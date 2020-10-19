@@ -3,6 +3,7 @@ package com.akanbi.chucknorris.presentation.viewmodel.fact.random
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.akanbi.chucknorris.domain.model.Fact
 import com.akanbi.chucknorris.domain.usecase.fact.random.TellMeAFactRandomUseCase
+import com.akanbi.chucknorris.presentation.fact.random.FactRandomViewModel
 import io.mockk.coEvery
 import io.mockk.junit5.MockKExtension
 import io.mockk.mockk

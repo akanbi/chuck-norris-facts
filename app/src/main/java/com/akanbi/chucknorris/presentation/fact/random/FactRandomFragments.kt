@@ -1,4 +1,4 @@
-package com.akanbi.chucknorris.presentation.viewmodel.fact.random
+package com.akanbi.chucknorris.presentation.fact.random
 
 import android.os.Bundle
 import android.view.LayoutInflater
