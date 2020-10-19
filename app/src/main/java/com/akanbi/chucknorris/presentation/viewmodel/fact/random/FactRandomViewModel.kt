@@ -1,4 +1,4 @@
-package com.akanbi.chucknorris.presenter.viewmodel.fact.random
+package com.akanbi.chucknorris.presentation.viewmodel.fact.random
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.akanbi.chucknorris.presenter.viewstate
+package com.akanbi.chucknorris.presentation.viewstate
 
 sealed class ViewState<out R> {
 

@@ -6,7 +6,7 @@
     <data>
         <variable
             name="factRandomViewModel"
-            type="com.akanbi.chucknorris.presenter.viewmodel.fact.random.FactRandomViewModel" />
+            type="com.akanbi.chucknorris.presentation.viewmodel.fact.random.FactRandomViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

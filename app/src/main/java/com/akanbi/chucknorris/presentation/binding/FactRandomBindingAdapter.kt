@@ -1,4 +1,4 @@
-package com.akanbi.chucknorris.presenter.binding
+package com.akanbi.chucknorris.presentation.binding
 
 import android.view.View
 import android.webkit.WebView

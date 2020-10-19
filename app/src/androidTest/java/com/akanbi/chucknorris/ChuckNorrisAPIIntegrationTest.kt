@@ -2,9 +2,7 @@ package com.akanbi.chucknorris
 
 import com.akanbi.chucknorris.data.api.ChuckNorrisAPI
 import com.akanbi.chucknorris.data.di.dataModule
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.test.runBlockingTest
 import org.junit.After
 import org.junit.Assert.assertNotNull
 import org.junit.Assert.assertTrue

@@ -1,4 +1,4 @@
-package com.akanbi.chucknorris.presenter.view
+package com.akanbi.chucknorris.presentation.view
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

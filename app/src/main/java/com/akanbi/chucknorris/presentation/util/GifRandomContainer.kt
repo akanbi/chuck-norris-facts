@@ -1,4 +1,4 @@
-package com.akanbi.chucknorris.presenter.util
+package com.akanbi.chucknorris.presentation.util
 
 val gifList = arrayListOf(
     "https://media0.giphy.com/media/d2jfPv6CUzpopfLa/giphy.gif",

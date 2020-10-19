@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".presenter.view.ChuckNorrisFactsActivity">
+    tools:context=".presentation.view.ChuckNorrisFactsActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarActivity"
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/fragmentRandomFact"
-        class="com.akanbi.chucknorris.presenter.viewmodel.fact.random.FactRandomFragments"
+        class="com.akanbi.chucknorris.presentation.viewmodel.fact.random.FactRandomFragments"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"

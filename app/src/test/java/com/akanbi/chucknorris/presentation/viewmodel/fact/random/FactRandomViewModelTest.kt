@@ -1,4 +1,4 @@
-package com.akanbi.chucknorris.presenter.viewmodel.fact.random
+package com.akanbi.chucknorris.presentation.viewmodel.fact.random
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.akanbi.chucknorris.domain.model.Fact
@@ -13,7 +13,6 @@ import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.test.setMain
 import org.junit.Rule
 import org.junit.jupiter.api.Assertions.assertNotNull
-import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
