@@ -22,7 +22,7 @@ jobs:
       - name: Run instrumentation tests
         uses: reactivecircus/android-emulator-runner@v2
         with:
-          api-level: 29
+          api-level: 26
           arch: x86
           profile: Nexus 6
           avd-name: test
