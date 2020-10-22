@@ -17,11 +17,9 @@ class FactRandomViewModel(private val tellMeAFactRandomUseCase: TellMeAFactRando
 
     fun loadFactRandom() {
         viewModelScope.launch {
-            _factLiveData.value = null
+            _factLiveData.value = Fact(factDescription = "", icon = "")
             _factLiveData.value = tellMeAFactRandomUseCase.execute()
         }
     }
-
-    fun loadGifUrl(): String = randomGif()
 
 }

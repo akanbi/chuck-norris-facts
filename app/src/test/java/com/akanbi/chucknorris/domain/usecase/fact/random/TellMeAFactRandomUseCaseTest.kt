@@ -30,10 +30,6 @@ internal class TellMeAFactRandomUseCaseTest {
     private lateinit var repository: ChuckNorrisRepository
     private lateinit var factResult: Fact
 
-    @Rule
-    @JvmField
-    var exception = ExpectedException.none()
-
     @Before
     fun setUp() {
         init(this)

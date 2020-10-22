@@ -36,6 +36,11 @@ android {
         sourceCompatibility = "8"
     }
 
+    testOptions {
+        unitTests.all {
+            useJUnitPlatform()
+        }
+    }
 }
 
 dependencies {
