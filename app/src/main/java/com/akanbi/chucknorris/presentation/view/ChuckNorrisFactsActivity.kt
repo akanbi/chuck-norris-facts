@@ -25,7 +25,7 @@ class ChuckNorrisFactsActivity : AppCompatActivity() {
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.search_facts, menu)
         searchView = menu?.findItem(R.id.search_facts)?.actionView as SearchView
-        searchView.queryHint = "Query"
+        searchView.queryHint = getString(R.string.searchHint)
         searchView.setOnQueryTextListener(onQueryText())
         return true
     }
