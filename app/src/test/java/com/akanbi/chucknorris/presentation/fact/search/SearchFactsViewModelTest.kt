@@ -11,6 +11,7 @@ import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
+import kotlinx.coroutines.test.TestCoroutineScope
 import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.test.setMain
 import org.junit.Rule
@@ -28,8 +29,9 @@ internal class SearchFactsViewModelTest {
     @Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
     private val testDispatcher = TestCoroutineDispatcher()
+    private val testScope = TestCoroutineScope(testDispatcher)
 
-    private var searchFactsViewModel: SearchFactsViewModel = mockk(relaxed = true)
+    private lateinit var searchFactsViewModel: SearchFactsViewModel
     private var searchMeAFactUseCase: SearchMeAFactUseCase = mockk()
 
     @Nested
@@ -37,22 +39,12 @@ internal class SearchFactsViewModelTest {
     inner class SearchFacts {
 
         @Test
-        fun `Should load facts and populate liveData`() = runBlockingTest {
+        fun `Should load facts and populate liveData`() = testDispatcher.runBlockingTest {
             Dispatchers.setMain(testDispatcher)
-            coEvery { searchMeAFactUseCase.execute("android") } returns (createFactList())
+            searchFactsViewModel = SearchFactsViewModel(searchMeAFactUseCase, testScope)
             searchFactsViewModel.search("android")
 
-            assertNotNull(searchFactsViewModel.factsListLiveData.value)
-        }
-
-        private fun createFactList(): List<Fact> {
-            return arrayListOf(
-                Fact(factDescription = "Android is very cool", icon = "icon 1"),
-                Fact(factDescription = "Android is cool", icon = "icon 2"),
-                Fact(factDescription = "Android is regular", icon = "icon 3"),
-                Fact(factDescription = "Android is boring", icon = "icon 4"),
-                Fact(factDescription = "Android is very boring", icon = "icon 5")
-            )
+            coEvery { searchMeAFactUseCase.execute("android") }
         }
 
     }

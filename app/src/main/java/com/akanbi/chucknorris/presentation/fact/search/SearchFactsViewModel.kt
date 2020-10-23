@@ -6,17 +6,20 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.akanbi.chucknorris.domain.model.Fact
 import com.akanbi.chucknorris.domain.usecase.fact.search.SearchMeAFactUseCase
+import com.akanbi.chucknorris.presentation.util.getViewModelScope
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class SearchFactsViewModel(private val searchMeAFactUseCase: SearchMeAFactUseCase) : ViewModel() {
+class SearchFactsViewModel(private val searchMeAFactUseCase: SearchMeAFactUseCase, coroutineScope: CoroutineScope? = null) : ViewModel() {
     private var _factsListLiveData: MutableLiveData<List<Fact>> = MutableLiveData()
+    private val uiScope = getViewModelScope(coroutineScope)
 
     val factsListLiveData: LiveData<List<Fact>>
         get() = _factsListLiveData
 
     fun search(query: String) {
-        viewModelScope.launch {
+        uiScope.launch {
             _factsListLiveData.value = searchMeAFactUseCase.execute(query)
         }
     }

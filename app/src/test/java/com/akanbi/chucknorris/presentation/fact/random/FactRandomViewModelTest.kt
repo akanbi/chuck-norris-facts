@@ -5,11 +5,13 @@ import com.akanbi.chucknorris.domain.model.Fact
 import com.akanbi.chucknorris.domain.usecase.fact.random.TellMeAFactRandomUseCase
 import com.akanbi.chucknorris.presentation.fact.random.FactRandomViewModel
 import io.mockk.coEvery
+import io.mockk.coVerify
 import io.mockk.junit5.MockKExtension
 import io.mockk.mockk
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.TestCoroutineDispatcher
+import kotlinx.coroutines.test.TestCoroutineScope
 import kotlinx.coroutines.test.runBlockingTest
 import kotlinx.coroutines.test.setMain
 import org.junit.Rule
@@ -27,21 +29,22 @@ internal class FactRandomViewModelTest {
     @Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
     private val testDispatcher = TestCoroutineDispatcher()
+    private val testScope = TestCoroutineScope(testDispatcher)
 
-    private var factRandomViewModel: FactRandomViewModel = mockk(relaxed = true)
-    private var tellMeAFactRandomUseCase: TellMeAFactRandomUseCase = mockk()
+    private lateinit var factRandomViewModel: FactRandomViewModel
+    private var tellMeAFactRandomUseCase: TellMeAFactRandomUseCase = mockk(relaxed = true)
 
     @Nested
     @DisplayName("When execute load on FactRandomViewModel")
     inner class LoadFactRandom {
 
         @Test
-        fun `Should load one fact and populate liveData`() = runBlockingTest {
+        fun `Should load one fact and populate liveData`() = testDispatcher.runBlockingTest {
             Dispatchers.setMain(testDispatcher)
-            coEvery { tellMeAFactRandomUseCase.execute() } returns (Fact("Fact loaded", icon = "icon"))
+            factRandomViewModel = FactRandomViewModel(tellMeAFactRandomUseCase, testScope)
             factRandomViewModel.loadFactRandom()
 
-            assertNotNull(factRandomViewModel.factLiveData.value)
+            coVerify { tellMeAFactRandomUseCase.execute() }
         }
 
     }

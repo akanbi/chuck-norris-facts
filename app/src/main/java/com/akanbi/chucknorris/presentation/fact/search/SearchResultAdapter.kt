@@ -15,7 +15,7 @@ class SearchResultAdapter(private val factsResult: List<Fact>, private val textQ
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         val binding = (holder as SearchResultViewHolder).searchResultBinding
         binding?.fact = factsResult[position]
-        binding?.queryResult?.text = textQuery
+        binding?.queryResult?.text ="${binding?.root?.context?.getString(R.string.searchBy)} ${textQuery}"
         binding?.executePendingBindings()
     }
 
