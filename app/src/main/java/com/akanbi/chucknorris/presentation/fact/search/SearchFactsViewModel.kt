@@ -11,11 +11,11 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-class SearchFactsViewModel(private val searchMeAFactUseCase: SearchMeAFactUseCase, coroutineScope: CoroutineScope? = null) : ViewModel() {
-    private var _factsListLiveData: MutableLiveData<List<Fact>> = MutableLiveData()
+class SearchFactsViewModel(private val searchMeAFactUseCase: com.akanbi.chucknorris.domain.usecase.fact.search.SearchMeAFactUseCase, coroutineScope: CoroutineScope? = null) : ViewModel() {
+    private var _factsListLiveData: MutableLiveData<List<com.akanbi.chucknorris.domain.model.Fact>> = MutableLiveData()
     private val uiScope = getViewModelScope(coroutineScope)
 
-    val factsListLiveData: LiveData<List<Fact>>
+    val factsListLiveData: LiveData<List<com.akanbi.chucknorris.domain.model.Fact>>
         get() = _factsListLiveData
 
     fun search(query: String) {

@@ -32,7 +32,7 @@ internal class FactRandomViewModelTest {
     private val testScope = TestCoroutineScope(testDispatcher)
 
     private lateinit var factRandomViewModel: FactRandomViewModel
-    private var tellMeAFactRandomUseCase: TellMeAFactRandomUseCase = mockk(relaxed = true)
+    private var tellMeAFactRandomUseCase: com.akanbi.chucknorris.domain.usecase.fact.random.TellMeAFactRandomUseCase = mockk(relaxed = true)
 
     @Nested
     @DisplayName("When execute load on FactRandomViewModel")

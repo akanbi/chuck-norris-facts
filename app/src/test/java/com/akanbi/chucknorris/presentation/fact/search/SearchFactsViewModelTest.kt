@@ -32,7 +32,7 @@ internal class SearchFactsViewModelTest {
     private val testScope = TestCoroutineScope(testDispatcher)
 
     private lateinit var searchFactsViewModel: SearchFactsViewModel
-    private var searchMeAFactUseCase: SearchMeAFactUseCase = mockk()
+    private var searchMeAFactUseCase: com.akanbi.chucknorris.domain.usecase.fact.search.SearchMeAFactUseCase = mockk()
 
     @Nested
     @DisplayName("When execute search on SearchFactsViewModel")

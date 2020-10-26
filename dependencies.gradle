@@ -1,0 +1,73 @@
+ext {
+    room_version = '2.2.5'
+    kotlin_version = "1.4.10"
+    koin_version = "2.0.1"
+    lifecycle_version = "2.2.0"
+    coroutines_version = "1.3.7"
+    coroutines_test_version = "1.3.0"
+    moshi_version = "1.11.0"
+    glide_version = "4.11.0"
+    junit_jupiter_version = "5.7.0"
+    retrofit_version = "2.9.0"
+    retrofit_adapter_version = "0.9.2"
+    multidex_version = "2.0.1"
+    constraint_layout_version = "2.0.2"
+    recyclerview_version = "1.1.0"
+    cardview_version = "1.0.0"
+    mockk_version = "1.10.2"
+    android_appcompat_version = "1.2.0"
+    ktx_version = "1.3.2"
+    truth_version = '1.1'
+    core_testing_version = "2.1.0"
+    junit_runner_version = "1.7.0"
+    espresso_version = "3.3.0"
+    rules_test_version = "1.0.2"
+    android_core_test_version = "1.3.0"
+    material_version = "1.2.1"
+
+    dependencies = [
+            kotlin                       : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version",
+            room                         : "androidx.room:room-runtime:$room_version",
+            roomArch                     : "android.arch.persistence.room:runtime:$room_version",
+            roomTest                     : "android.arch.persistence.room:testing:$room_version",
+            roomCompiler                 : "androidx.room:room-compiler:$room_version", // kapt
+            multidex                     : "androidx.multidex:multidex:$multidex_version",
+            retrofit                     : "com.squareup.retrofit2:retrofit:$retrofit_version",
+            retrofitMoshiConverter       : "com.squareup.retrofit2:converter-moshi:$retrofit_version",
+            retrofitAdapterCoroutine     : "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:$retrofit_adapter_version",
+            moshi                        : "com.squareup.moshi:moshi:$moshi_version",
+            moshiKotlin                  : "com.squareup.moshi:moshi-kotlin:$moshi_version",
+            moshiCodegen                 : "com.squareup.moshi:moshi-kotlin-codegen:$moshi_version", // kapt
+            koin                         : "org.koin:koin-android:$koin_version",
+            koinViewModel                : "org.koin:koin-android-viewmodel:$koin_version",
+            coroutinesCore               : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version",
+            coroutinesAndroid            : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines_version",
+            lifecycleViewModel           : "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version",
+            lifecycleLiveData            : "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version",
+            lifecycleRuntime             : "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
+            lifecycleViewModelSavedState : "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version",
+            lifecycleExtensions          : "androidx.lifecycle:lifecycle-extensions:$lifecycle_version",
+            constraintLayout             : "androidx.constraintlayout:constraintlayout:$constraint_layout_version",
+            recyclerView                 : "androidx.recyclerview:recyclerview:$recyclerview_version",
+            cardView                     : "androidx.cardview:cardview:$cardview_version",
+            appCompat                    : "androidx.appcompat:appcompat:$android_appcompat_version",
+            ktx                          : "androidx.core:core-ktx:$ktx_version",
+            glide                        : "com.github.bumptech.glide:glide:$glide_version",
+            glideCompiler                : "com.github.bumptech.glide:compiler:$glide_version", // annotationProcessor
+            material                     : "com.google.android.material:material:$material_version",
+            // TEST DEPENDENCIES
+            mockk                        : "io.mockk:mockk:$mockk_version",
+            koinTest                     : "org.koin:koin-test:$koin_version",
+            coroutinesTest               : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version",
+            junitJupiter                 : "org.junit.jupiter:junit-jupiter-api:$junit_jupiter_version",
+            junitJupiterEngine           : "org.junit.jupiter:junit-jupiter-engine:$junit_jupiter_version", // testRuntimeOnly
+            espresso                     : "androidx.test.espresso:espresso-core:$espresso_version",
+            googleTruth                  : "com.google.truth:truth:$truth_version",
+            coreTesting                  : "androidx.arch.core:core-testing:$core_testing_version",
+            androidCoreTest              : "androidx.test:core:$android_core_test_version", // testImplementation and androidTestImplementation
+            junitRunner                  : "org.junit.platform:junit-platform-runner:$junit_runner_version",
+            testRunner                   : "androidx.test:runner:1.3.0", // androidTestImplementation
+            rulesTest                    : "com.android.support.test:rules:$rules_test_version", // androidTestImplementation
+    ]
+
+}

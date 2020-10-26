@@ -7,11 +7,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.akanbi.chucknorris.domain.model.Fact
 
 @BindingAdapter("android:visibility")
-fun showLoadListResult(constraintLayout: ConstraintLayout, list: List<Fact>?) {
+fun showLoadListResult(constraintLayout: ConstraintLayout, list: List<com.akanbi.chucknorris.domain.model.Fact>?) {
     constraintLayout.visibility = if (list.isNullOrEmpty()) View.VISIBLE else View.GONE
 }
 
 @BindingAdapter("android:visibility")
-fun showListResult(recyclerView: RecyclerView, list: List<Fact>?) {
+fun showListResult(recyclerView: RecyclerView, list: List<com.akanbi.chucknorris.domain.model.Fact>?) {
     recyclerView.visibility = if (list != null && list.isNotEmpty()) View.VISIBLE else View.GONE
 }
