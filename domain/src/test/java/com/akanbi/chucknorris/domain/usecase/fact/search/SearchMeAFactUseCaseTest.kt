@@ -1,4 +1,4 @@
-package com.akanbi.chucknorris.domain.fact.search
+package com.akanbi.chucknorris.domain.usecase.fact.search
 
 import com.akanbi.chucknorris.data.model.FactListResponse
 import com.akanbi.chucknorris.data.model.FactResponse

@@ -4,9 +4,9 @@ import com.akanbi.chucknorris.data.model.FactListResponse
 import com.akanbi.chucknorris.data.model.FactResponse
 import com.akanbi.chucknorris.domain.model.Fact
 
-class FactListResponseToListFactConvert {
+class ListFactConverter : Converter<FactListResponse, List<Fact>> {
 
-    fun convert(responseList: FactListResponse): List<Fact> = buildListFacts(responseList.result)
+    override fun convert(toConvert: FactListResponse): List<Fact> = buildListFacts(toConvert.result)
 
     private fun buildListFacts(factsResponseList: List<FactResponse>): List<Fact> {
         val factsResult = arrayListOf<Fact>()

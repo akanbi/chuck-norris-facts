@@ -7,9 +7,9 @@ import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-internal class FactListResponseToListFactConvertTest {
+internal class ListFactConverterTest {
 
-    private val converter: FactListResponseToListFactConvert = FactListResponseToListFactConvert()
+    private val converter: ListFactConverter = ListFactConverter()
 
     @Nested
     @DisplayName("When do convert factListResponse to List facts")

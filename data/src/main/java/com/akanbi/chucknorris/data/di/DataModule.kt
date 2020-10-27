@@ -12,7 +12,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
 val dataModule = module {
-    single<Retrofit> {
+    single {
         buildRetrofit()
     }
 

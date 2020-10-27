@@ -1,4 +1,4 @@
-package com.akanbi.chucknorris.domain.fact.random
+package com.akanbi.chucknorris.domain.usecase.fact.random
 
 import com.akanbi.chucknorris.data.model.FactResponse
 import com.akanbi.chucknorris.data.repository.ChuckNorrisRepository
@@ -23,7 +23,7 @@ import org.junit.jupiter.api.extension.ExtendWith
 @DisplayName("Given TellMeAFactRandomUseCase")
 internal class TellMeAFactRandomUseCaseTest {
     @InjectMockKs
-    private lateinit var useCase: com.akanbi.chucknorris.domain.usecase.fact.random.TellMeAFactRandomUseCase
+    private lateinit var useCase: TellMeAFactRandomUseCase
     @MockK
     private lateinit var repository: ChuckNorrisRepository
     private lateinit var factResult: Fact
