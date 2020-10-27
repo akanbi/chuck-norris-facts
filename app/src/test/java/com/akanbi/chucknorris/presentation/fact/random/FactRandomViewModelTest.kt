@@ -32,14 +32,14 @@ internal class FactRandomViewModelTest {
     private val testScope = TestCoroutineScope(testDispatcher)
 
     private lateinit var factRandomViewModel: FactRandomViewModel
-    private var tellMeAFactRandomUseCase: com.akanbi.chucknorris.domain.usecase.fact.random.TellMeAFactRandomUseCase = mockk(relaxed = true)
+    private var tellMeAFactRandomUseCase: TellMeAFactRandomUseCase = mockk(relaxed = true)
 
     @Nested
     @DisplayName("When execute load on FactRandomViewModel")
     inner class LoadFactRandom {
 
         @Test
-        fun `Should load one fact and populate liveData`() = testDispatcher.runBlockingTest {
+        fun `Should verify call use case correct`() = testDispatcher.runBlockingTest {
             Dispatchers.setMain(testDispatcher)
             factRandomViewModel = FactRandomViewModel(tellMeAFactRandomUseCase, testScope)
             factRandomViewModel.loadFactRandom()
