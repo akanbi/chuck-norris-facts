@@ -2,7 +2,7 @@
 # Chuck Norris Facts 
 <img src="https://pngimage.net/wp-content/uploads/2018/05/chuck-norris-approved-png-3.png" height="100">
 
-Project for study modularization and clean architecture
+Project for study modularization
 
 ## Language, libraries and tools:
  - Kotlin
