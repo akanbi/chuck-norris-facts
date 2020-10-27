@@ -10,11 +10,11 @@ import org.koin.dsl.module
 val presentationModule = module {
 
     viewModel {
-        FactRandomViewModel(get<TellMeAFactRandomUseCase>())
+        FactRandomViewModel(get<com.akanbi.chucknorris.domain.usecase.fact.random.TellMeAFactRandomUseCase>())
     }
 
     viewModel {
-        SearchFactsViewModel(get<SearchMeAFactUseCase>())
+        SearchFactsViewModel(get<com.akanbi.chucknorris.domain.usecase.fact.search.SearchMeAFactUseCase>())
     }
 
 }

@@ -39,7 +39,7 @@ internal class FactRandomViewModelTest {
     inner class LoadFactRandom {
 
         @Test
-        fun `Should load one fact and populate liveData`() = testDispatcher.runBlockingTest {
+        fun `Should verify call use case correct`() = testDispatcher.runBlockingTest {
             Dispatchers.setMain(testDispatcher)
             factRandomViewModel = FactRandomViewModel(tellMeAFactRandomUseCase, testScope)
             factRandomViewModel.loadFactRandom()

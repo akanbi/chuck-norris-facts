@@ -20,10 +20,14 @@ class FactRandomViewModel(private val tellMeAFactRandomUseCase: TellMeAFactRando
 
     fun loadFactRandom() {
         uiScope.launch {
+            clearLiveData()
             val factReturned = tellMeAFactRandomUseCase.execute()
-            _factLiveData.value = Fact(factDescription = "", icon = "")
             _factLiveData.value = factReturned
         }
+    }
+
+    private fun clearLiveData() {
+        if (factLiveData.value != null) _factLiveData.value = Fact(factDescription = "", icon = "")
     }
 
 }
