@@ -1,4 +1,4 @@
-package com.akanbi.chucknorris.presentation
+package com.akanbi.chucknorris
 
 import android.app.Application
 import com.akanbi.chucknorris.data.di.dataModule
@@ -13,8 +13,7 @@ class ChuckNorrisApplication : Application() {
         super.onCreate()
         startKoin {
             androidContext(this@ChuckNorrisApplication)
-            modules(arrayListOf(com.akanbi.chucknorris.data.di.dataModule,
-                com.akanbi.chucknorris.domain.di.domainModule, presentationModule))
+            modules(arrayListOf(dataModule, domainModule, presentationModule))
         }
     }
 

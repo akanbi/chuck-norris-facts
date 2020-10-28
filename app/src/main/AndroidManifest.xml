@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".presentation.ChuckNorrisApplication"
+        android:name=".ChuckNorrisApplication"
         android:allowBackup="true"
         android:icon="@mipmap/icon_chucknorris"
         android:label="@string/app_name"
