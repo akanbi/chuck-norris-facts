@@ -2,7 +2,7 @@
 # Chuck Norris Facts 
 <img src="https://pngimage.net/wp-content/uploads/2018/05/chuck-norris-approved-png-3.png" height="100">
 
-This project has idea for pratice and study concepts modularization and clean architecture on android projects. To have data to show, is consumed api of chucknorris.io, this api show facts of iconic Chuck Norris. 
+This project has an idea practice and study modularization and clean architecture concepts  in android projects. To have data to show, it is consumed api of chucknorris.io, this api display facts of it is iconic Chuck Norris.
 
 Link: https://api.chucknorris.io/
 
@@ -14,6 +14,5 @@ Link: https://api.chucknorris.io/
  - LiveData
  - Retrofit
  - Moshi
- - Unit tests with:
-    - JUnit Jupiter 5
-    - MockK
+ - JUnit Jupiter 5
+ - MockK
