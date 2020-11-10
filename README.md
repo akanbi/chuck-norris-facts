@@ -2,7 +2,7 @@
 # Chuck Norris Facts 
 <img src="https://pngimage.net/wp-content/uploads/2018/05/chuck-norris-approved-png-3.png" height="100">
 
-This project has an idea practice and study modularization and clean architecture concepts  in android projects. To have data to show, it is consumed api of chucknorris.io, this api display facts of it is iconic Chuck Norris.
+This project aims to propose the pratice and study of modularization and clean architecture concepts of android projects. In order to have data to show, the api of chucknorris.io is consumed. This api shows facts of iconic Chuck Norris.
 
 Link: https://api.chucknorris.io/
 
