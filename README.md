@@ -16,3 +16,4 @@ Link: https://api.chucknorris.io/
  - Moshi
  - JUnit Jupiter 5
  - MockK
+ - Robot Pattern
