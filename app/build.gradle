@@ -39,6 +39,10 @@ android {
             useJUnitPlatform()
         }
     }
+
+    packagingOptions {
+        exclude 'META-INF/*'
+    }
 }
 
 dependencies {
@@ -91,6 +95,7 @@ dependencies {
     androidTestImplementation dependencies.junitRunner
     androidTestImplementation dependencies.coreTesting
     androidTestImplementation dependencies.espresso
+    androidTestImplementation dependencies.espressoWeb
     androidTestImplementation dependencies.rulesTest
     androidTestImplementation dependencies.koinTest
     androidTestImplementation dependencies.coroutinesTest

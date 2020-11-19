@@ -7,7 +7,7 @@ import androidx.databinding.BindingAdapter
 
 @BindingAdapter("app:loadData")
 fun loadData(webView: WebView, text: String) {
-    val html = "<html><body><p align=\"justify\" style=\"font-size:10px\">${formatTextForWebView(text)}</p></body></html>";
+    val html = "<html><body><p id=\"factContent\" align=\"justify\" style=\"font-size:10px\">${formatTextForWebView(text)}</p></body></html>";
     webView.loadData(html, "text/html", "utf-8")
 }
 

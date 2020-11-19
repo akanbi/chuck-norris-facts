@@ -68,6 +68,7 @@ ext {
             junitRunner                  : "org.junit.platform:junit-platform-runner:$junit_runner_version",
             testRunner                   : "androidx.test:runner:1.3.0", // androidTestImplementation
             rulesTest                    : "com.android.support.test:rules:$rules_test_version", // androidTestImplementation
+            espressoWeb                  : "androidx.test.espresso:espresso-web:$espresso_version"
     ]
 
 }
