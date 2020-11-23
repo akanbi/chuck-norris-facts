@@ -29,6 +29,8 @@ jobs:
           emulator-options: -no-window -gpu swiftshader_indirect -no-snapshot -noaudio -no-boot-anim -camera-back none
           disable-animations: true
           script: ./gradlew data:connectedCheck
+      - name: Run UI Tests
+        uses: vgaidarji/android-github-actions-emulator@v1.0.1
       - name: Generate APK
         run: ./gradlew assembleDebug
       - name: Rename APK
