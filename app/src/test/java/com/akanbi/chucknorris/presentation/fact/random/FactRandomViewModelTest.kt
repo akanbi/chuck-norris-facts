@@ -1,4 +1,4 @@
-package com.akanbi.chucknorris.presentation.viewmodel.fact.random
+package com.akanbi.chucknorris.presentation.fact.random
 
 import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import com.akanbi.chucknorris.domain.model.Fact

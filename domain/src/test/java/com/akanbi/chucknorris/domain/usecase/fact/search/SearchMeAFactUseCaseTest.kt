@@ -1,10 +1,10 @@
 package com.akanbi.chucknorris.domain.usecase.fact.search
 
+import com.akanbi.chucknorris.common.ResultState
 import com.akanbi.chucknorris.data.model.FactListResponse
 import com.akanbi.chucknorris.data.model.FactResponse
 import com.akanbi.chucknorris.data.repository.ChuckNorrisRepository
 import com.akanbi.chucknorris.domain.model.Fact
-import com.akanbi.chucknorris.domain.usecase.fact.search.SearchMeAFactUseCase
 import io.mockk.MockKAnnotations.init
 import io.mockk.coEvery
 import io.mockk.impl.annotations.InjectMockKs
@@ -14,7 +14,6 @@ import kotlinx.coroutines.runBlocking
 import org.junit.Before
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Assertions.assertNotNull
-import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -27,7 +26,7 @@ internal class SearchMeAFactUseCaseTest {
     private lateinit var useCase: SearchMeAFactUseCase
     @MockK
     private lateinit var repository: ChuckNorrisRepository
-    private lateinit var listFactsResult: List<Fact>
+    private lateinit var listFactsResult: ResultState<List<Fact>>
 
     @Before
     fun setUp() {
@@ -44,7 +43,7 @@ internal class SearchMeAFactUseCaseTest {
             listFactsResult = useCase.execute("joke")
 
             assertNotNull(listFactsResult)
-            assertEquals(5, listFactsResult.size)
+            assertEquals(5, (listFactsResult as ResultState.Success).data.size)
         }
     }
 

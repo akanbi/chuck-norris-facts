@@ -1,5 +1,6 @@
 package com.akanbi.chucknorris.domain.usecase.fact.random
 
+import com.akanbi.chucknorris.common.ResultState
 import com.akanbi.chucknorris.data.repository.ChuckNorrisRepository
 import com.akanbi.chucknorris.domain.converter.FactConverter
 import com.akanbi.chucknorris.domain.exception.FactEmptyException
@@ -10,13 +11,13 @@ import kotlinx.coroutines.withContext
 class TellMeAFactRandomUseCase(private val repository: ChuckNorrisRepository) {
     private val converter = FactConverter()
 
-    suspend fun execute(): Fact {
+    suspend fun execute(): ResultState<Fact> {
         return withContext(Dispatchers.IO) {
             val fact = converter.convert(repository.tellMeAFact())
             if (verifyFieldsHasFill(fact))
-                return@withContext fact
+                return@withContext ResultState.Success(fact)
 
-            throw FactEmptyException("Fact is empty!")
+            return@withContext ResultState.Error(FactEmptyException("Fact is empty!"))
         }
     }
 
