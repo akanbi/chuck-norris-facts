@@ -46,4 +46,10 @@ dependencies {
 
     implementation dependencies.glide
     annotationProcessor dependencies.glideCompiler
+
+    testImplementation dependencies.mockk
+    testImplementation dependencies.googleTruth
+    testImplementation dependencies.junitRunner
+    testImplementation dependencies.junitJupiter
+    testRuntimeOnly dependencies.junitJupiterEngine
 }
