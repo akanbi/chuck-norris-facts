@@ -1,10 +1,9 @@
 package com.akanbi.chucknorris.domain.usecase.fact.search
 
-import com.akanbi.chucknorris.common.ResultState
-import com.akanbi.chucknorris.data.model.FactListResponse
-import com.akanbi.chucknorris.data.model.FactResponse
-import com.akanbi.chucknorris.data.repository.ChuckNorrisRepository
+import com.akanbi.chucknorris.domain.bondary.IChuckNorrisRepository
 import com.akanbi.chucknorris.domain.model.Fact
+import com.akanbi.chucknorris.domain.model.response.FactListResponse
+import com.akanbi.chucknorris.domain.model.response.FactResponse
 import io.mockk.MockKAnnotations.init
 import io.mockk.coEvery
 import io.mockk.impl.annotations.InjectMockKs
@@ -25,8 +24,8 @@ internal class SearchMeAFactUseCaseTest {
     @InjectMockKs
     private lateinit var useCase: SearchMeAFactUseCase
     @MockK
-    private lateinit var repository: ChuckNorrisRepository
-    private lateinit var listFactsResult: ResultState<List<Fact>>
+    private lateinit var repository: IChuckNorrisRepository
+    private lateinit var listFactsResult: com.akanbi.commonkotlin.ResultState<List<Fact>>
 
     @Before
     fun setUp() {
@@ -43,7 +42,7 @@ internal class SearchMeAFactUseCaseTest {
             listFactsResult = useCase.execute("joke")
 
             assertNotNull(listFactsResult)
-            assertEquals(5, (listFactsResult as ResultState.Success).data.size)
+            assertEquals(5, (listFactsResult as com.akanbi.commonkotlin.ResultState.Success).data.size)
         }
     }
 

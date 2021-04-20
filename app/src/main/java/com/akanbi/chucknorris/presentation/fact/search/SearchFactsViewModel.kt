@@ -3,10 +3,9 @@ package com.akanbi.chucknorris.presentation.fact.search
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.akanbi.chucknorris.common.ResultState
 import com.akanbi.chucknorris.domain.model.Fact
 import com.akanbi.chucknorris.domain.usecase.fact.search.SearchMeAFactUseCase
-import com.akanbi.chucknorris.presentation.util.getViewModelScope
+import com.akanbi.commonandroid.getViewModelScope
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 
@@ -19,7 +18,7 @@ class SearchFactsViewModel(private val searchMeAFactUseCase: SearchMeAFactUseCas
 
     fun search(query: String) {
         uiScope.launch {
-            val facts = (searchMeAFactUseCase.execute(query) as ResultState.Success).data
+            val facts = (searchMeAFactUseCase.execute(query) as com.akanbi.commonkotlin.ResultState.Success).data
             _factsListLiveData.value = facts
         }
     }

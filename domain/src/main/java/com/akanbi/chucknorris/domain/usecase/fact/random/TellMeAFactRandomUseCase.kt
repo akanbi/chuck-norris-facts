@@ -1,14 +1,14 @@
 package com.akanbi.chucknorris.domain.usecase.fact.random
 
-import com.akanbi.chucknorris.common.ResultState
-import com.akanbi.chucknorris.data.repository.ChuckNorrisRepository
+import com.akanbi.chucknorris.domain.bondary.IChuckNorrisRepository
 import com.akanbi.chucknorris.domain.converter.FactConverter
 import com.akanbi.chucknorris.domain.exception.FactEmptyException
 import com.akanbi.chucknorris.domain.model.Fact
+import com.akanbi.commonkotlin.ResultState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class TellMeAFactRandomUseCase(private val repository: ChuckNorrisRepository) {
+class TellMeAFactRandomUseCase(private val repository: IChuckNorrisRepository) {
     private val converter = FactConverter()
 
     suspend fun execute(): ResultState<Fact> {

@@ -2,14 +2,12 @@ package com.akanbi.chucknorris.presentation.view
 
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
-import androidx.fragment.app.Fragment
 import com.akanbi.chucknorris.R
 import com.akanbi.chucknorris.presentation.fact.random.FactRandomFragments
 import com.akanbi.chucknorris.presentation.fact.search.SearchFactFragment
-import com.akanbi.chucknorris.presentation.util.fragmentTransaction
+import com.akanbi.commonandroid.fragmentTransaction
 
 class ChuckNorrisFactsActivity : AppCompatActivity() {
 

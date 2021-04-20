@@ -1,7 +1,7 @@
 package com.akanbi.chucknorris.domain.converter
 
-import com.akanbi.chucknorris.data.model.FactListResponse
-import com.akanbi.chucknorris.data.model.FactResponse
+import com.akanbi.chucknorris.domain.model.response.FactListResponse
+import com.akanbi.chucknorris.domain.model.response.FactResponse
 import com.akanbi.chucknorris.domain.model.Fact
 
 class ListFactConverter : Converter<FactListResponse, List<Fact>> {

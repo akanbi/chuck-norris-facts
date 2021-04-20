@@ -48,6 +48,8 @@ dependencies {
 
     implementation dependencies.kotlin
 
+    implementation project(':domain')
+
     implementation dependencies.retrofit
     implementation dependencies.retrofitAdapterCoroutine
     implementation dependencies.retrofitMoshiConverter

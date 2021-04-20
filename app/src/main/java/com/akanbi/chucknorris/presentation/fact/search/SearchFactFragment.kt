@@ -11,7 +11,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.akanbi.chucknorris.R
 import com.akanbi.chucknorris.databinding.FactsListQueryLayoutBinding
-import com.akanbi.chucknorris.presentation.util.showContentOnImageView
+import com.akanbi.commonandroid.showContentOnImageView
 import kotlinx.coroutines.launch
 import org.koin.android.viewmodel.ext.android.viewModel
 

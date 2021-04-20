@@ -1,10 +1,9 @@
 package com.akanbi.chucknorris.domain.usecase.fact.random
 
-import com.akanbi.chucknorris.common.ResultState
-import com.akanbi.chucknorris.data.model.FactResponse
-import com.akanbi.chucknorris.data.repository.ChuckNorrisRepository
+import com.akanbi.chucknorris.domain.bondary.IChuckNorrisRepository
 import com.akanbi.chucknorris.domain.exception.FactEmptyException
 import com.akanbi.chucknorris.domain.model.Fact
+import com.akanbi.chucknorris.domain.model.response.FactResponse
 import io.mockk.MockKAnnotations.init
 import io.mockk.coEvery
 import io.mockk.impl.annotations.InjectMockKs
@@ -24,8 +23,8 @@ internal class TellMeAFactRandomUseCaseTest {
     @InjectMockKs
     private lateinit var useCase: TellMeAFactRandomUseCase
     @MockK
-    private lateinit var repository: ChuckNorrisRepository
-    private lateinit var factResult: ResultState<Fact>
+    private lateinit var repository: IChuckNorrisRepository
+    private lateinit var factResult: com.akanbi.commonkotlin.ResultState<Fact>
 
     @Before
     fun setUp() {
@@ -42,8 +41,8 @@ internal class TellMeAFactRandomUseCaseTest {
             factResult = useCase.execute()
 
             assertNotNull(factResult)
-            assertEquals("Fact", (factResult as ResultState.Success).data.factDescription)
-            assertEquals("icon", (factResult as ResultState.Success).data.icon)
+            assertEquals("Fact", (factResult as com.akanbi.commonkotlin.ResultState.Success).data.factDescription)
+            assertEquals("icon", (factResult as com.akanbi.commonkotlin.ResultState.Success).data.icon)
         }
 
         @Test
@@ -56,7 +55,7 @@ internal class TellMeAFactRandomUseCaseTest {
             ))
             val exceptionResult = useCase.execute()
 
-            assertTrue((exceptionResult as ResultState.Error).exception is FactEmptyException)
+            assertTrue((exceptionResult as com.akanbi.commonkotlin.ResultState.Error).exception is FactEmptyException)
             assertEquals("Fact is empty!", exceptionResult.exception.message)
         }
     }

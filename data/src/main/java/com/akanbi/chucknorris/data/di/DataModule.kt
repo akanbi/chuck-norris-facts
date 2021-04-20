@@ -2,8 +2,8 @@ package com.akanbi.chucknorris.data.di
 
 import com.akanbi.chucknorris.data.BuildConfig.NORRIS_API_URL
 import com.akanbi.chucknorris.data.api.ChuckNorrisAPI
-import com.akanbi.chucknorris.data.repository.ChuckNorrisRepository
 import com.akanbi.chucknorris.data.repository.ChuckNorrisRepositoryImpl
+import com.akanbi.chucknorris.domain.bondary.IChuckNorrisRepository
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
@@ -20,7 +20,7 @@ val dataModule = module {
         get<Retrofit>().create(ChuckNorrisAPI::class.java)
     }
 
-    single<ChuckNorrisRepository> {
+    single<IChuckNorrisRepository> {
         ChuckNorrisRepositoryImpl(get<ChuckNorrisAPI>())
     }
 }
